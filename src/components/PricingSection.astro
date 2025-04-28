@@ -1,0 +1,322 @@
+---
+import { selectedPlan } from "../context/SelectedPlanContext";
+import ChoosePlanButton from "./ChoosePlanButton";
+---
+
+<section id="planes" class="py-20 bg-white">
+  <div class="container mx-auto px-4">
+    <div class="max-w-3xl mx-auto text-center mb-16">
+      <span
+        class="inline-block px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm font-medium mb-4"
+      >
+        PLANES Y PRECIOS
+      </span>
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">
+        Planes flexibles según el tamaño de tu equipo
+      </h2>
+      <p class="text-xl text-gray-600">
+        Escala tu servicio de atención al cliente con nuestros planes ajustados
+        a las necesidades de tu negocio.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+      <!-- Plan 1 -->
+      <div
+        class="card bg-white border-2 border-gray-100 hover:border-primary-200 relative"
+      >
+        <div
+          class="absolute top-0 right-0 bg-gray-100 px-4 py-1 rounded-bl-lg rounded-tr-lg text-sm font-medium"
+        >
+          Más popular
+        </div>
+        <h3 class="text-xl font-bold mb-2">Starter 5</h3>
+        <div class="mb-4">
+          <span class="text-4xl font-bold">$47</span>
+          <span class="text-gray-600"> USD/mes</span>
+        </div>
+        <p class="text-gray-600 mb-6">
+          Ideal para pequeños negocios y emprendedores.
+        </p>
+        <ul class="space-y-3 mb-8">
+          <li class="flex items-start">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                clip-rule="evenodd"></path>
+            </svg>
+            <span>5 agentes</span>
+          </li>
+          <li class="flex items-start">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                clip-rule="evenodd"></path>
+            </svg>
+            <span>1 línea de WhatsApp</span>
+          </li>
+          <li class="flex items-start">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                clip-rule="evenodd"></path>
+            </svg>
+            <span>CRM básico incluido</span>
+          </li>
+          <li class="flex items-start">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                clip-rule="evenodd"></path>
+            </svg>
+            <span>Inbox multicanal</span>
+          </li>
+          <li class="flex items-start">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                clip-rule="evenodd"></path>
+            </svg>
+            <span>Soporte técnico básico</span>
+          </li>
+        </ul>
+        <ChoosePlanButton plan="Starter 5" client:only="preact" />
+      </div>
+
+      <!-- Plan 2 -->
+      <div
+        class="card bg-white border-2 border-primary-400 shadow-lg relative transform md:scale-105 z-10"
+      >
+        <div
+          class="absolute top-0 right-0 bg-primary-500 text-white px-4 py-1 rounded-bl-lg rounded-tr-lg text-sm font-medium"
+        >
+          Recomendado
+        </div>
+        <h3 class="text-xl font-bold mb-2">Growth 10</h3>
+        <div class="mb-4">
+          <span class="text-4xl font-bold">$97</span>
+          <span class="text-gray-600"> USD/mes</span>
+        </div>
+        <p class="text-gray-600 mb-6">Perfecto para negocios en crecimiento.</p>
+        <ul class="space-y-3 mb-8">
+          <li class="flex items-start">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                clip-rule="evenodd"></path>
+            </svg>
+            <span>10 agentes</span>
+          </li>
+          <li class="flex items-start">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                clip-rule="evenodd"></path>
+            </svg>
+            <span>3 líneas de WhatsApp</span>
+          </li>
+          <li class="flex items-start">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                clip-rule="evenodd"></path>
+            </svg>
+            <span>Integrable con IA</span>
+          </li>
+          <li class="flex items-start">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                clip-rule="evenodd"></path>
+            </svg>
+            <span>Calendario disponible</span>
+          </li>
+          <li class="flex items-start">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                clip-rule="evenodd"></path>
+            </svg>
+            <span>Automatizaciones básicas</span>
+          </li>
+        </ul>
+        <ChoosePlanButton plan="Growth 10" client:only="preact" />
+      </div>
+
+      <!-- Plan 3 -->
+      <div
+        class="card bg-white border-2 border-gray-100 hover:border-primary-200"
+      >
+        <h3 class="text-xl font-bold mb-2">Scale Ilimitado</h3>
+        <div class="mb-4">
+          <span class="text-4xl font-bold">$197</span>
+          <span class="text-gray-600"> USD/mes</span>
+        </div>
+        <p class="text-gray-600 mb-6">La solución completa para empresas.</p>
+        <ul class="space-y-3 mb-8">
+          <li class="flex items-start">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                clip-rule="evenodd"></path>
+            </svg>
+            <span>Agentes ilimitados</span>
+          </li>
+          <li class="flex items-start">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                clip-rule="evenodd"></path>
+            </svg>
+            <span>10 líneas de WhatsApp</span>
+          </li>
+          <li class="flex items-start">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                clip-rule="evenodd"></path>
+            </svg>
+            <span>IA + Autuagendamiento</span>
+          </li>
+          <li class="flex items-start">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                clip-rule="evenodd"></path>
+            </svg>
+            <span>Automatizaciones avanzadas</span>
+          </li>
+          <li class="flex items-start">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                clip-rule="evenodd"></path>
+            </svg>
+            <span>API para integraciones</span>
+          </li>
+        </ul>
+        <ChoosePlanButton plan="Scale Ilimitado" client:only="preact" />
+      </div>
+    </div>
+
+    <!-- Extras -->
+    <div class="max-w-3xl mx-auto mt-16 bg-gray-50 rounded-2xl p-8">
+      <h3 class="text-2xl font-bold mb-6 text-center">
+        Servicios adicionales disponibles
+      </h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="p-4 bg-white rounded-xl shadow-sm">
+          <h4 class="font-bold mb-2">Línea WhatsApp extra</h4>
+          <p class="text-gray-600 mb-2">Amplía tu capacidad de atención</p>
+          <p class="text-lg font-bold text-primary-600">+$15 USD/mes</p>
+        </div>
+        <div class="p-4 bg-white rounded-xl shadow-sm">
+          <h4 class="font-bold mb-2">Canal adicional</h4>
+          <p class="text-gray-600 mb-2">Instagram o Facebook</p>
+          <p class="text-lg font-bold text-primary-600">+$30 USD/mes</p>
+        </div>
+        <div class="p-4 bg-white rounded-xl shadow-sm">
+          <h4 class="font-bold mb-2">Implementaciones IA</h4>
+          <p class="text-gray-600 mb-2">Automatización avanzada</p>
+          <p class="text-lg font-bold text-primary-600">desde $200 USD</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-12 text-center">
+      <a href="#automatizaciones" class="btn btn-outline">
+        Ver opciones de automatización
+      </a>
+    </div>
+  </div>
+</section>

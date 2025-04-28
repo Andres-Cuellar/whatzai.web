@@ -1,0 +1,51 @@
+---
+import DemoForm from "../components/DemoForm";
+const webhook = import.meta.env.PUBLIC_WEBHOOK_URL;
+---
+
+<section id="demo" class="py-20 bg-white">
+  <div
+    class="container mx-auto px-4 flex items-center justify-center gap-12 flex-col md:flex-row"
+  >
+    <div class="flex items-center justify-center mb-12">
+      <img
+        src="http://conectia.us/wp-content/uploads/2025/04/FORM-IMG.jpg"
+        alt="WhatzAI chat"
+        class="w-full max-w-xl rounded-2xl"
+      />
+    </div>
+
+    <DemoForm client:only="preact" />
+  </div>
+</section>
+
+<script type="module" client:load>
+  const form = document.getElementById("demo-form");
+
+  if (form) {
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData.entries());
+
+      try {
+        const response = await fetch(webhook, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        });
+
+        if (response.ok) {
+          window.location.href = "/gracias";
+        } else {
+          alert("Error al enviar los datos.");
+        }
+      } catch (error) {
+        console.error(error);
+        alert("Error en el envío. Inténtalo de nuevo.");
+      }
+    });
+  }
+</script>
