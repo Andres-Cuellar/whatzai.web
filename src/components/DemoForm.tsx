@@ -5,13 +5,44 @@ import { selectedPlan } from "../context/SelectedPlanContext";
 export default function DemoForm() {
   const plan = useStore(selectedPlan);
 
-
   function handleChange(event: Event) {
     const target = event.target as HTMLSelectElement;
     selectedPlan.set(target.value || null); // Actualiza el store si el usuario cambia el select
   }
 
   console.log('plan', selectedPlan);
+
+  const handleSubmitForm = async (event: Event) => {
+    event.preventDefault();
+    const form = event.target as HTMLFormElement;
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+
+    try {
+      const response = await fetch(
+        "https://ai.glumpstudio.com/webhook-test/4b8596f8-c80c-4306-8693-c89dbd9e2321",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          // mode: 'no-cors',
+          body: JSON.stringify(data),
+        }
+      );
+
+      console.log("response", response);
+
+      if (response.ok) {
+        window.location.href = "/gracias";
+      } else {
+        alert("Error al enviar los datos.");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("Error en el envío. Inténtalo de nuevo.");
+    }
+  };
 
   return (
     <div class="max-w-2xl mx-auto">
@@ -28,9 +59,8 @@ export default function DemoForm() {
         id="demo-form"
         method="POST"
         class="bg-white rounded-2xl shadow-custom p-8"
+        onSubmit={handleSubmitForm}
       >
-
-
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
           <div>
             <label
@@ -135,7 +165,8 @@ export default function DemoForm() {
         </div>
 
         <div class="flex flex-col md:flex-row gap-4">
-          <button type="submit" class="btn btn-secondary flex-1">
+          <button type="submit" class="btn btn-secondary flex-1"
+          >
             Solicitar demo gratuita
           </button>
           <a href="#planes" class="btn btn-primary flex-1">
@@ -144,5 +175,7 @@ export default function DemoForm() {
         </div>
       </form>
     </div>
+
+
   );
 }
