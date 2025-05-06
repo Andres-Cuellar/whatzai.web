@@ -7,8 +7,6 @@ export default function DemoForm() {
 
   const webhook = import.meta.env.PUBLIC_WEBHOOK_URL;
 
-  console.log("webhook", webhook);
-
   function handleChange(event: Event) {
     const target = event.target as HTMLSelectElement;
     selectedPlan.set(target.value || null); // Actualiza el store si el usuario cambia el select
