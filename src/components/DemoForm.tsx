@@ -24,6 +24,7 @@ export default function DemoForm() {
       const response = await fetch(webhook, {
         method: "POST",
         headers: {
+          "Access-Control-Allow-Origin": "*",
           "Content-Type": "application/json",
         },
         body: JSON.stringify(data),
