@@ -20,7 +20,7 @@ export default function DemoForm() {
 
     try {
       const response = await fetch(
-        "https://ai.glumpstudio.com/webhook-test/4b8596f8-c80c-4306-8693-c89dbd9e2321",
+        "https://apiai.glumpstudio.com/webhook/4b8596f8-c80c-4306-8693-c89dbd9e2321",
         {
           method: "POST",
           headers: {
