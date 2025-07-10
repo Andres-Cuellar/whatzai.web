@@ -170,9 +170,9 @@ export default function DemoForm() {
           <button type="submit" class="btn btn-secondary flex-1">
             Solicitar demo gratuita
           </button>
-          <a href="#planes" class="btn btn-primary flex-1">
+          {/* <a href="#planes" class="btn btn-primary flex-1">
             Contratar ahora
-          </a>
+          </a> */}
         </div>
       </form>
     </div>
